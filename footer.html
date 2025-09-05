@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Civil Engineering Services Footer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+        background: #b1a8a8;
+        width: 100%;
+        padding: 10px;
+        margin: 10px;
+
+    }
+
+    .footer {
+      display: flex;
+      background: #b1a8a8;
+      width: 100%;
+      padding: 20px;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+      margin: 10px;
+    }
+
+    .footer-column h3 {
+      border-bottom: 2px solid black;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .footer-column a {
+      text-decoration: none;
+      color: black;
+      margin: 5px 0;
+      transition: color 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: darkblue;
+    }
+    .social-media{
+        display: flex;
+        gap: 40px;
+        padding: 20px;
+        justify-content: center;
+      
+        
+        
+    }
+
+     .social-media img{
+        height: 25px;
+        text-decoration: underline;
+    }
+
+    .rights{
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-column {
+        width: 100%;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <footer>
+    <div class="footer">
+
+      <!-- 1. Our Services -->
+      <div class="footer-column">
+        <h3>Our Services</h3>
+        <a href="#">Home Construction & Modern Designing</a>
+        <a href="#">Roof Top Designing with Custom Choices</a>
+        <a href="#">Property Measurement with Modern Instruments</a>
+        <a href="#">Renovation & Maintenance Works</a>
+      </div>
+
+      <!-- 2. Quick Links -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <a href="#">Gallery</a>
+        <a href="#">Our Projects</a>
+        <a href="#">Achievements</a>
+        <a href="#">Customer Reviews</a>
+      </div>
+
+      <!-- 3. Report & Feedback -->
+      <div class="footer-column">
+        <h3>Report & Feedback</h3>
+        <a href="#">Get Instant Report</a>
+        <a href="#">How to Report a Problem</a>
+        <a href="#">Submit a Review</a>
+        <a href="#">Feedback Guidelines</a>
+      </div>
+
+      <!-- 4. Contact Us -->
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <a href="tel:+93798188726">📞 +93798188726</a>
+        <a href="tel:+93744243931">📞 +93744243931</a>
+        <a href="saqibservices26@gmail.com">📧 saqibservices26@gmail.com</a>
+        <a href="#"><img src="\media\map.png" style="height: 25px;" alt="">  Paktika, Yahya Khel main Markeet, Afghanistan </a>
+      
+        <a href="#">Working Hours: 8 AM - 4 PM</a>
+      </div>
+
+
+      
+    </div>
+
+    <div class="social-media">
+
+        <a href="#facebook">
+            <img src="\media\facebook.png" alt="img fb logo">
+        </a>
+        
+      <a  href="#instagram" >
+        <img src="\media\instagram.png" alt="img fb logo">
+     </a>
+      <a href="#yt"> <img src="\media\yt.png" alt="img fb logo">
+
+      </a>
+      <a href="#twitter"> <img src="\media\twitter.png" alt="img fb logo"> </a>
+    </div>
+
+    <div class="rights">
+
+        <span> © 2025 Saqib Services. All rights reserved. Made with ❤️ by Saqib Services.</span>
+    </div>
+  </footer>
+</body>
+</html>

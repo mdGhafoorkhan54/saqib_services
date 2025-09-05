@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saqib Engineering Services</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Mirza:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Amiri", serif;
+            background: #fdfdfd;
+        }
+
+        nav {
+            background-color: beige;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu {
+            height: 35px;
+            cursor: pointer;
+            /* display: none; */
+        }
+
+        .headName {
+            font-family: "Mirza", serif;
+            font-weight: 700;
+            font-size: 1.8em;
+            word-spacing: 15px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: darkblue;
+        }
+
+        .user {
+            height: 28px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .user:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .menu {
+                display: block;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                background: beige;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 220px;
+                padding: 20px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+                transform: translateX(-100%);
+                /* start hidden */
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+                /* slide in */
+            }
+
+
+            .headName {
+                font-size: 1em;
+                word-spacing: 4px;
+            }
+
+           
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="menu" src="/media/menu.png" alt="Menu" onclick="toggleMenu()">
+
+            <h1 class="headName">ثاقب دي انجنيري خدمتونو دفتر</h1>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><img class="user" src="/media/translate.png" alt="Translate"></li>
+                <li><img class="user" src="/media/user.png" alt="User"></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
