@@ -11,127 +11,302 @@
         href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Mirza:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navBar.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
+        /* Grid container */
+        .content {
+            background: #b48383;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            /* Responsive columns */
+            gap: 10px;
+            width: 100%;
+            max-width: 1200px;
+            /* Optional: limit max width */
+            margin: 20px auto;
+            /* Center horizontally */
+            padding: 12px;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: "Amiri", serif;
-            background: #fdfdfd;
-        }
-
-        nav {
-            background-color: beige;
-            height: 70px;
+        /* Each grid item */
+        .grids {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            /* Keep images inside */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 0 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            justify-content: center;
         }
 
-        .menu {
-            height: 35px;
-            cursor: pointer;
-            /* display: none; */
+        /* Images */
+        .photoz {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Crop nicely without distortion */
+            display: block;
+            transition: transform 0.3s ease;
         }
 
-        .headName {
-            font-family: "Mirza", serif;
-            font-weight: 700;
-            font-size: 1.8em;
-            word-spacing: 15px;
-            text-align: center;
-            flex-grow: 1;
+        .photoz:hover {
+            transform: scale(1.05);
+            /* Optional zoom on hover */
         }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: darkblue;
-        }
-
-        .user {
-            height: 28px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .user:hover {
-            opacity: 0.7;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .menu {
-                display: block;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                background: beige;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 220px;
-                padding: 20px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-
-                transform: translateX(-100%);
-                /* start hidden */
-                transition: transform 0.5s ease-in-out;
-            }
-
-            .nav-links.active {
-                transform: translateX(0);
-                /* slide in */
-            }
-
-
-            .headName {
-                font-size: 1em;
-                word-spacing: 4px;
-            }
-
-           
     </style>
 </head>
 
 <body>
+
     <header>
         <nav>
-            <img class="menu" src="/media/menu.png" alt="Menu" onclick="toggleMenu()">
+            <!-- Hamburger Menu Icon -->
+            <img class="menu" src="media/menu.png" alt="Menu" onclick="toggleMenu()">
 
+            <!-- Website Name -->
             <h1 class="headName">ثاقب دي انجنيري خدمتونو دفتر</h1>
 
+            <!-- Navigation Links -->
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><img class="user" src="/media/translate.png" alt="Translate"></li>
-                <li><img class="user" src="/media/user.png" alt="User"></li>
+
+                <!-- Language Icon -->
+                <li style="position: relative;">
+                    <img class="user lang" src="media/translate.png" alt="Translate" id="langIcon">
+                    <!-- Language Dropdown -->
+                    <div class="dropdown lang-dropdown" id="langDropdown">
+                        <button onclick="changeLanguage('en')">English</button>
+                        <button onclick="changeLanguage('ps')">پښتو (Pashto)</button>
+                        <button onclick="changeLanguage('pr')">فارسی (Persian)</button>
+                    </div>
+                </li>
+
+                <!-- Profile Icon -->
+                <li style="position: relative;">
+                    <img class="user profile" src="media/user.png" alt="User" id="userIcon">
+                    <!-- User Dropdown -->
+                    <div class="dropdown user-dropdown" id="userDropdown">
+                        <a href="#signin">Sign In</a>
+                        <a href="#signup">Sign Up</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
+
+
+
+
+
+    <section>
+        <div class="content">
+            <div class="grids">
+                <img class="photoz" src="media\IMG-20250902-WA0012.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\IMG-20250902-WA0013.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\IMG-20250902-WA0014.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\IMG-20250902-WA0015.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\IMG-20250902-WA0017.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\pexels-gustavo-fring-6285159.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\pexels-lexovertoom-1109541.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\pexels-pixabay-159375.jpg" alt="">
+            </div>
+            <div class="grids">
+                <img class="photoz" src="media\pexels-thirdman-8482551.jpg" alt="">
+            </div>
+
+            <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0012.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0013.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0014.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0015.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0017.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-gustavo-fring-6285159.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-lexovertoom-1109541.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-pixabay-159375.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-thirdman-8482551.jpg" alt="">
+        </div>
+
+
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0012.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0013.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0014.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0015.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0017.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-gustavo-fring-6285159.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-lexovertoom-1109541.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-pixabay-159375.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-thirdman-8482551.jpg" alt="">
+        </div>
+
+
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0012.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0013.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0014.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0015.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\IMG-20250902-WA0017.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-gustavo-fring-6285159.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-lexovertoom-1109541.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-pixabay-159375.jpg" alt="">
+        </div>
+        <div class="grids">
+            <img class="photoz" src="media\pexels-thirdman-8482551.jpg" alt="">
+        </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer">
+
+            <!-- 1. Our Services -->
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <a href="#">Home Construction & Modern Designing</a>
+                <a href="#">Roof Top Designing with Custom Choices</a>
+                <a href="#">Property Measurement with Modern Instruments</a>
+                <a href="#">Renovation & Maintenance Works</a>
+            </div>
+
+            <!-- 2. Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="#">Gallery</a>
+                <a href="#">Our Projects</a>
+                <a href="#">Achievements</a>
+                <a href="#">Customer Reviews</a>
+            </div>
+
+            <!-- 3. Report & Feedback -->
+            <div class="footer-column">
+                <h3>Report & Feedback</h3>
+                <a href="#">Get Instant Report</a>
+                <a href="#">How to Report a Problem</a>
+                <a href="#">Submit a Review</a>
+                <a href="#">Feedback Guidelines</a>
+            </div>
+
+            <!-- 4. Contact Us -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <a href="tel:+93798188726">📞 +93798188726</a>
+                <a href="tel:+93744243931">📞 +93744243931</a>
+                <a href="saqibservices26@gmail.com">📧 saqibservices26@gmail.com</a>
+                <a href="#"><img src="media\map.png" style="height: 25px;" alt=""> Paktika, Yahya Khel main Markeet,
+                    Afghanistan </a>
+
+                <a href="#">Working Hours: 8 AM - 4 PM</a>
+            </div>
+
+
+
+        </div>
+
+        <div class="social-media">
+
+            <a href="#facebook">
+                <img src="media\facebook.png" alt="img fb logo">
+            </a>
+
+            <a href="#instagram">
+                <img src="media\instagram.png" alt="img fb logo">
+            </a>
+            <a href="#yt"> <img src="media\yt.png" alt="img fb logo">
+
+            </a>
+            <a href="#twitter"> <img src="media\twitter.png" alt="img fb logo"> </a>
+        </div>
+
+        <div class="rights">
+
+            <span> © 2025 Saqib Services. All rights reserved. Made with ❤️ by Saqib Services.</span>
+        </div>
+    </footer>
+
+
+
 
     <script>
         // Toggle mobile menu
@@ -139,6 +314,7 @@
             document.getElementById("navLinks").classList.toggle("active");
         }
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
